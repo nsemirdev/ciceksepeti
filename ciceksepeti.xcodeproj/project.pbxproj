@@ -14,6 +14,12 @@
 		2D2BEBBB297B60260083C573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2BEBB9297B60260083C573 /* LaunchScreen.storyboard */; };
 		2D2BEBC4297B60950083C573 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBC3297B60950083C573 /* AppContainer.swift */; };
 		2D2BEBC6297B609B0083C573 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBC5297B609B0083C573 /* AppRouter.swift */; };
+		2D2BEBCF297B622E0083C573 /* HomeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBCE297B622E0083C573 /* HomeFeedViewController.swift */; };
+		2D2BEBD1297B62360083C573 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBD0297B62360083C573 /* CategoriesViewController.swift */; };
+		2D2BEBD3297B623C0083C573 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBD2297B623C0083C573 /* FavoritesViewController.swift */; };
+		2D2BEBD5297B62410083C573 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBD4297B62410083C573 /* BasketViewController.swift */; };
+		2D2BEBD7297B62480083C573 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBD6297B62480083C573 /* ProfileViewController.swift */; };
+		2D2BEBD9297B62590083C573 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBD8297B62590083C573 /* MainTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		2D2BEBBC297B60260083C573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D2BEBC3297B60950083C573 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		2D2BEBC5297B609B0083C573 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		2D2BEBCE297B622E0083C573 /* HomeFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
+		2D2BEBD0297B62360083C573 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		2D2BEBD2297B623C0083C573 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		2D2BEBD4297B62410083C573 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		2D2BEBD6297B62480083C573 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2D2BEBD8297B62590083C573 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +70,10 @@
 		2D2BEBAD297B60250083C573 /* ciceksepeti */ = {
 			isa = PBXGroup;
 			children = (
+				2D2BEBC8297B61EA0083C573 /* Scenes */,
+				2D2BEBC7297B61B90083C573 /* Resources */,
 				2D2BEBC2297B608A0083C573 /* App */,
 				2D2BEBB2297B60250083C573 /* ViewController.swift */,
-				2D2BEBB7297B60260083C573 /* Assets.xcassets */,
-				2D2BEBB9297B60260083C573 /* LaunchScreen.storyboard */,
-				2D2BEBBC297B60260083C573 /* Info.plist */,
 			);
 			path = ciceksepeti;
 			sourceTree = "<group>";
@@ -76,6 +87,69 @@
 				2D2BEBC5297B609B0083C573 /* AppRouter.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		2D2BEBC7297B61B90083C573 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2D2BEBB7297B60260083C573 /* Assets.xcassets */,
+				2D2BEBB9297B60260083C573 /* LaunchScreen.storyboard */,
+				2D2BEBBC297B60260083C573 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2D2BEBC8297B61EA0083C573 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2D2BEBCD297B620F0083C573 /* Profile */,
+				2D2BEBCC297B62070083C573 /* Basket */,
+				2D2BEBCB297B62010083C573 /* Favorites */,
+				2D2BEBCA297B61FB0083C573 /* Categories */,
+				2D2BEBC9297B61F50083C573 /* HomeFeed */,
+				2D2BEBD8297B62590083C573 /* MainTabBarViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2D2BEBC9297B61F50083C573 /* HomeFeed */ = {
+			isa = PBXGroup;
+			children = (
+				2D2BEBCE297B622E0083C573 /* HomeFeedViewController.swift */,
+			);
+			path = HomeFeed;
+			sourceTree = "<group>";
+		};
+		2D2BEBCA297B61FB0083C573 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2D2BEBD0297B62360083C573 /* CategoriesViewController.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		2D2BEBCB297B62010083C573 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				2D2BEBD2297B623C0083C573 /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		2D2BEBCC297B62070083C573 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				2D2BEBD4297B62410083C573 /* BasketViewController.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		2D2BEBCD297B620F0083C573 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2D2BEBD6297B62480083C573 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,11 +222,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2BEBD5297B62410083C573 /* BasketViewController.swift in Sources */,
 				2D2BEBB3297B60250083C573 /* ViewController.swift in Sources */,
+				2D2BEBD7297B62480083C573 /* ProfileViewController.swift in Sources */,
+				2D2BEBD9297B62590083C573 /* MainTabBarViewController.swift in Sources */,
 				2D2BEBC4297B60950083C573 /* AppContainer.swift in Sources */,
+				2D2BEBD3297B623C0083C573 /* FavoritesViewController.swift in Sources */,
 				2D2BEBAF297B60250083C573 /* AppDelegate.swift in Sources */,
 				2D2BEBC6297B609B0083C573 /* AppRouter.swift in Sources */,
 				2D2BEBB1297B60250083C573 /* SceneDelegate.swift in Sources */,
+				2D2BEBD1297B62360083C573 /* CategoriesViewController.swift in Sources */,
+				2D2BEBCF297B622E0083C573 /* HomeFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +373,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HG8VJQPKXZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ciceksepeti/Info.plist;
+				INFOPLIST_FILE = ciceksepeti/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -323,7 +403,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HG8VJQPKXZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ciceksepeti/Info.plist;
+				INFOPLIST_FILE = ciceksepeti/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
