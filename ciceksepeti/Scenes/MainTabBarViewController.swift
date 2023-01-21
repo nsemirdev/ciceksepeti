@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class MainTabBarViewController: UITabBarController {
   override func viewDidLoad() {
@@ -13,6 +14,15 @@ final class MainTabBarViewController: UITabBarController {
     view.backgroundColor = .white
     setUpAppearance()
     setUpTabBar()
+    setUpDivider()
+  }
+
+  private func setUpAppearance() {
+    let appearance = UINavigationBarAppearance()
+    appearance.configureWithOpaqueBackground()
+
+    UINavigationBar.appearance().standardAppearance = appearance
+    UINavigationBar.appearance().scrollEdgeAppearance = appearance
   }
 
   private func setUpTabBar() {
@@ -34,13 +44,19 @@ final class MainTabBarViewController: UITabBarController {
 
     viewControllers = controllers
   }
-
-  private func setUpAppearance() {
-    let appearance = UINavigationBarAppearance()
-    appearance.configureWithOpaqueBackground()
-
-    UINavigationBar.appearance().standardAppearance = appearance
-    UINavigationBar.appearance().scrollEdgeAppearance = appearance
+  
+  private func setUpDivider() {
+    let divider = UIView()
+    divider.backgroundColor = .systemPurple
+    
+    view.addSubview(divider)
+    divider.snp.makeConstraints { make in
+      make.leading.equalToSuperview()
+      make.trailing.equalToSuperview()
+      make.bottom.equalTo(tabBar.snp.top)
+      make.height.equalTo(1)
+    }
+    
   }
 }
 
