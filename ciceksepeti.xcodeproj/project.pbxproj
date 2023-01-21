@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2D2BEBAF297B60250083C573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBAE297B60250083C573 /* AppDelegate.swift */; };
 		2D2BEBB1297B60250083C573 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBB0297B60250083C573 /* SceneDelegate.swift */; };
-		2D2BEBB3297B60250083C573 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBB2297B60250083C573 /* ViewController.swift */; };
 		2D2BEBB8297B60260083C573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D2BEBB7297B60260083C573 /* Assets.xcassets */; };
 		2D2BEBBB297B60260083C573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2BEBB9297B60260083C573 /* LaunchScreen.storyboard */; };
 		2D2BEBC4297B60950083C573 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBC3297B60950083C573 /* AppContainer.swift */; };
@@ -26,7 +25,6 @@
 		2D2BEBAB297B60250083C573 /* ciceksepeti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ciceksepeti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2BEBAE297B60250083C573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D2BEBB0297B60250083C573 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D2BEBB2297B60250083C573 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D2BEBB7297B60260083C573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D2BEBBA297B60260083C573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D2BEBBC297B60260083C573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 				2D2BEBC8297B61EA0083C573 /* Scenes */,
 				2D2BEBC7297B61B90083C573 /* Resources */,
 				2D2BEBC2297B608A0083C573 /* App */,
-				2D2BEBB2297B60250083C573 /* ViewController.swift */,
 			);
 			path = ciceksepeti;
 			sourceTree = "<group>";
@@ -223,7 +220,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D2BEBD5297B62410083C573 /* BasketViewController.swift in Sources */,
-				2D2BEBB3297B60250083C573 /* ViewController.swift in Sources */,
 				2D2BEBD7297B62480083C573 /* ProfileViewController.swift in Sources */,
 				2D2BEBD9297B62590083C573 /* MainTabBarViewController.swift in Sources */,
 				2D2BEBC4297B60950083C573 /* AppContainer.swift in Sources */,

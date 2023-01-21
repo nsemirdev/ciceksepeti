@@ -7,23 +7,37 @@
 
 import UIKit
 
-class MainTabBarViewController: UITabBarController {
+final class MainTabBarViewController: UITabBarController {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.backgroundColor = .white
+    setUpTabBar()
+  }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  private func setUpTabBar() {
+    let titles = ["Anasayfa", "Kategoriler", "Favorilerim", "Sepetim", "Hesabım"]
+    let images = [UIImage(systemName: "house"), UIImage(systemName: "magnifyingglass"), UIImage(systemName: "heart"), UIImage(systemName: "basket"), UIImage(systemName: "person")]
 
-        // Do any additional setup after loading the view.
+    let controllers = [
+      UINavigationController.make(HomeFeedViewController()),
+      UINavigationController.make(CategoriesViewController()),
+      UINavigationController.make(FavoritesViewController()),
+      UINavigationController.make(BasketViewController()),
+      UINavigationController.make(ProfileViewController()),
+    ]
+
+    for (idx, controller) in controllers.enumerated() {
+      controller.tabBarItem.image = images[idx]
+      controller.tabBarItem.title = titles[idx]
     }
-    
 
-    /*
-    // MARK: - Navigation
+    viewControllers = controllers
+  }
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+// Builder pattern
+extension UINavigationController {
+  static func make(_ viewController: UIViewController) -> UINavigationController {
+    UINavigationController(rootViewController: viewController)
+  }
 }

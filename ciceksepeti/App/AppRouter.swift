@@ -12,7 +12,7 @@ final class AppRouter {
 
   func start(_ windowScene: UIWindowScene) {
     window = UIWindow(windowScene: windowScene)
-    window?.rootViewController = ViewController()
+    window?.rootViewController = MainTabBarViewController()
     window?.makeKeyAndVisible()
   }
 }
