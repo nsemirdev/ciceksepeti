@@ -10,10 +10,15 @@ import UIKit
 
 final class HomeFeedViewController: UIViewController {
   private let segmentedControl: UISegmentedControl = {
-    let segmentedControl = UISegmentedControl(items: ["Çiceksepeti", "Ekstra"])
+    let segmentedControl = UISegmentedControl(items: ["ali", "veli"])
     segmentedControl.sizeToFit()
     segmentedControl.selectedSegmentTintColor = .systemTeal
     segmentedControl.selectedSegmentIndex = 0
+    segmentedControl.setImage(UIImage(named: "cicek-sepeti-logo-2")?.withRenderingMode(.alwaysOriginal), forSegmentAt: 0)
+    segmentedControl.setImage(UIImage(named: "extra-logo-200")?.withRenderingMode(.alwaysOriginal), forSegmentAt: 1)
+    segmentedControl.heightAnchor.constraint(equalToConstant: 44).isActive = true
+    segmentedControl.layer.borderWidth = 1
+    segmentedControl.layer.borderColor = UIColor.secondaryLabel.cgColor
     return segmentedControl
   }()
 
