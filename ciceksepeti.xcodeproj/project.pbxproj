@@ -19,6 +19,7 @@
 		2D2BEBD5297B62410083C573 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBD4297B62410083C573 /* BasketViewController.swift */; };
 		2D2BEBD7297B62480083C573 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBD6297B62480083C573 /* ProfileViewController.swift */; };
 		2D2BEBD9297B62590083C573 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBD8297B62590083C573 /* MainTabBarViewController.swift */; };
+		2D2BEBDC297B673B0083C573 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2D2BEBDB297B673B0083C573 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2BEBDC297B673B0083C573 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +167,9 @@
 			dependencies = (
 			);
 			name = ciceksepeti;
+			packageProductDependencies = (
+				2D2BEBDB297B673B0083C573 /* SnapKit */,
+			);
 			productName = ciceksepeti;
 			productReference = 2D2BEBAB297B60250083C573 /* ciceksepeti.app */;
 			productType = "com.apple.product-type.application";
@@ -193,6 +198,9 @@
 				Base,
 			);
 			mainGroup = 2D2BEBA2297B60250083C573;
+			packageReferences = (
+				2D2BEBDA297B673A0083C573 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 2D2BEBAC297B60250083C573 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -442,6 +450,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2D2BEBDA297B673A0083C573 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2D2BEBDB297B673B0083C573 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D2BEBDA297B673A0083C573 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2D2BEBA3297B60250083C573 /* Project object */;
 }

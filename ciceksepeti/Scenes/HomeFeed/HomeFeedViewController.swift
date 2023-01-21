@@ -5,25 +5,43 @@
 //  Created by Emir Alkal on 21.01.2023.
 //
 
+import SnapKit
 import UIKit
 
-class HomeFeedViewController: UIViewController {
+final class HomeFeedViewController: UIViewController {
+  private let segmentedControl: UISegmentedControl = {
+    let segmentedControl = UISegmentedControl(items: ["Çiceksepeti", "Ekstra"])
+    segmentedControl.sizeToFit()
+    segmentedControl.selectedSegmentTintColor = .systemTeal
+    segmentedControl.selectedSegmentIndex = 0
+    return segmentedControl
+  }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  private let searchController: UISearchController = {
+    let searchController = UISearchController(searchResultsController: UIViewController())
+    searchController.searchBar.searchTextField.backgroundColor = .white
+    let textField = searchController.searchBar.searchTextField
+    textField.borderStyle = .none
+    textField.layer.cornerRadius = 4
+    textField.layer.borderWidth = 1
+    textField.layer.borderColor = UIColor.secondaryLabel.cgColor
+    textField.placeholder = "Marka, ürün veya kategori ara"
+    textField.snp.makeConstraints { make in
+      make.bottom.equalToSuperview().offset(-6)
+      make.leading.equalToSuperview().offset(8)
+      make.trailing.equalToSuperview().offset(-8)
+      make.height.equalTo(36)
     }
-    
+    return searchController
+  }()
 
-    /*
-    // MARK: - Navigation
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setUpSearchController()
+  }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  private func setUpSearchController() {
+    navigationItem.titleView = segmentedControl
+    navigationItem.searchController = searchController
+  }
 }

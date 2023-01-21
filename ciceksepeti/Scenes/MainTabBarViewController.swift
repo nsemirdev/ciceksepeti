@@ -41,7 +41,6 @@ final class MainTabBarViewController: UITabBarController {
 
     UINavigationBar.appearance().standardAppearance = appearance
     UINavigationBar.appearance().scrollEdgeAppearance = appearance
-    UINavigationBar.appearance().prefersLargeTitles = true
   }
 }
 
