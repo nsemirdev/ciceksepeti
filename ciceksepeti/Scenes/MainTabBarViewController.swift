@@ -11,6 +11,7 @@ final class MainTabBarViewController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
+    setUpAppearance()
     setUpTabBar()
   }
 
@@ -32,6 +33,15 @@ final class MainTabBarViewController: UITabBarController {
     }
 
     viewControllers = controllers
+  }
+
+  private func setUpAppearance() {
+    let appearance = UINavigationBarAppearance()
+    appearance.configureWithOpaqueBackground()
+
+    UINavigationBar.appearance().standardAppearance = appearance
+    UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    UINavigationBar.appearance().prefersLargeTitles = true
   }
 }
 
