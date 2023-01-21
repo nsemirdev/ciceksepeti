@@ -40,13 +40,79 @@ final class HomeFeedViewController: UIViewController {
     return searchController
   }()
 
+  private let collectionView: UICollectionView = {
+    let compositionalLayout = UICollectionViewCompositionalLayout { sectionIndex, _ in
+      switch sectionIndex {
+      case 0:
+        return CompositionalLayoutHelper.createFirstSection()
+      case 1:
+        return CompositionalLayoutHelper.createSecondSection()
+      case 2:
+        return CompositionalLayoutHelper.createThirdSection()
+      default:
+        return nil
+      }
+    }
+
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: compositionalLayout)
+    collectionView.backgroundColor = .secondarySystemBackground
+    return collectionView
+  }()
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    setUpSearchController()
+    setUpNavigationController()
+    setUpCollectionView()
   }
 
-  private func setUpSearchController() {
+  private func setUpNavigationController() {
     navigationItem.titleView = segmentedControl
     navigationItem.searchController = searchController
+    navigationItem.hidesSearchBarWhenScrolling = false
+  }
+
+  private func setUpCollectionView() {
+    view.addSubview(collectionView)
+    collectionView.dataSource = self
+    collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "item")
+
+    collectionView.snp.makeConstraints { make in
+      make.leading.trailing.equalToSuperview()
+      make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+      make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+    }
+  }
+}
+
+extension HomeFeedViewController: UICollectionViewDataSource {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    3
+  }
+
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    switch section {
+    case 0:
+      return 10
+    case 1:
+      return 2
+    case 2:
+      return 20
+    default:
+      return 0
+    }
+  }
+
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let item = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath)
+    if indexPath.section == 0 {
+      item.backgroundColor = .blue
+    } else if indexPath.section == 1 {
+      item.backgroundColor = .red
+      item.layer.cornerRadius = 12
+    } else if indexPath.section == 2 {
+      item.backgroundColor = .systemTeal
+      item.layer.cornerRadius = 8
+    }
+    return item
   }
 }

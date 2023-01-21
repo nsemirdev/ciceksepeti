@@ -20,6 +20,7 @@
 		2D2BEBD7297B62480083C573 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBD6297B62480083C573 /* ProfileViewController.swift */; };
 		2D2BEBD9297B62590083C573 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBD8297B62590083C573 /* MainTabBarViewController.swift */; };
 		2D2BEBDC297B673B0083C573 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2D2BEBDB297B673B0083C573 /* SnapKit */; };
+		2D2BEBE1297B83700083C573 /* CompositionalLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBE0297B83700083C573 /* CompositionalLayoutHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		2D2BEBD4297B62410083C573 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		2D2BEBD6297B62480083C573 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2D2BEBD8297B62590083C573 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		2D2BEBE0297B83700083C573 /* CompositionalLayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		2D2BEBAD297B60250083C573 /* ciceksepeti */ = {
 			isa = PBXGroup;
 			children = (
+				2D2BEBDF297B83620083C573 /* Helpers */,
 				2D2BEBC8297B61EA0083C573 /* Scenes */,
 				2D2BEBC7297B61B90083C573 /* Resources */,
 				2D2BEBC2297B608A0083C573 /* App */,
@@ -149,6 +152,14 @@
 				2D2BEBD6297B62480083C573 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		2D2BEBDF297B83620083C573 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2D2BEBE0297B83700083C573 /* CompositionalLayoutHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 				2D2BEBB1297B60250083C573 /* SceneDelegate.swift in Sources */,
 				2D2BEBD1297B62360083C573 /* CategoriesViewController.swift in Sources */,
 				2D2BEBCF297B622E0083C573 /* HomeFeedViewController.swift in Sources */,
+				2D2BEBE1297B83700083C573 /* CompositionalLayoutHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
