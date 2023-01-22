@@ -66,7 +66,8 @@ final class HomeFeedViewController: UIViewController {
     view.addSubview(collectionView)
     collectionView.dataSource = self
     collectionView.register(HeaderCell.self, forCellWithReuseIdentifier: HeaderCell.identifier)
-    collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "item")
+    collectionView.register(SlideCell.self, forCellWithReuseIdentifier: SlideCell.identifier)
+    collectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.identifier)
 
     collectionView.snp.makeConstraints { make in
       make.leading.trailing.equalToSuperview()
@@ -86,9 +87,9 @@ extension HomeFeedViewController: UICollectionViewDataSource {
     case 0:
       return HeaderCellMock.data.count
     case 1:
-      return 2
+      return SlideCellMock.data.count
     case 2:
-      return 20
+      return CategoryCellMock.data.count
     default:
       return 0
     }
@@ -96,28 +97,30 @@ extension HomeFeedViewController: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if indexPath.section == 0 {
-      guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCell.identifier, for: indexPath) as? HeaderCell else {
-        fatalError()
-      }
-      
-      item.configure(with: HeaderCellMock.data[indexPath.item])
-      
-      return item
-    } else {
-      let item = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath)
-      item.backgroundColor = .clear
-      item.layer.cornerRadius = 0
+      guard let item = collectionView
+        .dequeueReusableCell(withReuseIdentifier: HeaderCell.identifier, for: indexPath) as? HeaderCell
+      else { fatalError() }
 
-      if indexPath.section == 0 {
-        item.backgroundColor = .blue
-      } else if indexPath.section == 1 {
-        item.backgroundColor = .red
-        item.layer.cornerRadius = 12
-      } else if indexPath.section == 2 {
-        item.backgroundColor = .systemTeal
-        item.layer.cornerRadius = 8
-      }
+      item.configure(with: HeaderCellMock.data[indexPath.item])
+      return item
+
+    } else if indexPath.section == 1 {
+      guard let item = collectionView
+        .dequeueReusableCell(withReuseIdentifier: SlideCell.identifier, for: indexPath) as? SlideCell
+      else { fatalError() }
+
+      item.configure(with: SlideCellMock.data[indexPath.item])
+      return item
+
+    } else if indexPath.section == 2 {
+      guard let item = collectionView
+        .dequeueReusableCell(withReuseIdentifier: CategoryCell.identifier, for: indexPath) as? CategoryCell
+      else { fatalError() }
+
+      item.configure(with: CategoryCellMock.data[indexPath.row])
       return item
     }
+
+    return .init()
   }
 }
