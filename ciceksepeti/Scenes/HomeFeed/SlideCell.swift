@@ -9,9 +9,10 @@ import UIKit
 
 final class SlideCell: UICollectionViewCell {
   static let identifier = "SlideCell"
-  private let imageView: UIImageView = {
+  let imageView: UIImageView = {
     let imageView = UIImageView()
-    imageView.contentMode = .scaleAspectFit
+    imageView.contentMode = .scaleAspectFill
+    imageView.clipsToBounds = true
     imageView.backgroundColor = .white
     imageView.layer.cornerRadius = 8
 

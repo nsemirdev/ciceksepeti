@@ -48,7 +48,7 @@ final class HeaderCell: UICollectionViewCell {
 
   func configure(with model: HeaderCellModel) {
     detailLabel.text = model.description
-    imageView.image = UIImage(named: model.imageName)
+    imageView.image = UIImage(named: model.imageName)?.withRenderingMode(.alwaysOriginal)
   }
 
   private func layout() {

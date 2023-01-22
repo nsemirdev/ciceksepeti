@@ -9,7 +9,7 @@ import SnapKit
 import UIKit
 
 final class HomeFeedViewController: UIViewController {
-  private var viewModel = HomeFeedViewModel()
+  private let viewModel = HomeFeedViewModel()
 
   private let segmentedControl: UISegmentedControl = {
     let segmentedControl = UISegmentedControl(items: [
@@ -56,6 +56,21 @@ final class HomeFeedViewController: UIViewController {
     setUpCollectionView()
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    setUpSlidingEffect()
+  }
+
+  private func setUpSlidingEffect() {
+    viewModel.indexForSlide.bind { [unowned self] i in
+      let indexPath = IndexPath(item: i, section: 1)
+      let scrollPosition: UICollectionView.ScrollPosition = indexPath.item == 0 ? .right : .left
+      self.collectionView.scrollToItem(at: indexPath, at: scrollPosition, animated: true)
+    }
+
+    viewModel.startAnimating()
+  }
+
   private func setUpNavigationController() {
     navigationItem.titleView = segmentedControl
     navigationItem.searchController = searchController
@@ -65,6 +80,8 @@ final class HomeFeedViewController: UIViewController {
   private func setUpCollectionView() {
     view.addSubview(collectionView)
     collectionView.dataSource = self
+    collectionView.delegate = self
+
     collectionView.register(HeaderCell.self, forCellWithReuseIdentifier: HeaderCell.identifier)
     collectionView.register(SlideCell.self, forCellWithReuseIdentifier: SlideCell.identifier)
     collectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.identifier)
@@ -75,9 +92,17 @@ final class HomeFeedViewController: UIViewController {
       make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
     }
   }
+  
+  deinit {
+    viewModel.endAnimating()
+  }
 }
 
-extension HomeFeedViewController: UICollectionViewDataSource {
+extension HomeFeedViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print("Section \(indexPath.section) Item \(indexPath.item)")
+  }
+
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     3
   }

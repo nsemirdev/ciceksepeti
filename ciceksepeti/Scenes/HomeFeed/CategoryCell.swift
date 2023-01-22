@@ -12,9 +12,10 @@ final class CategoryCell: UICollectionViewCell {
   
   private let imageView: UIImageView = {
     let imageView = UIImageView()
-    imageView.contentMode = .scaleAspectFit
+    imageView.contentMode = .scaleAspectFill
     imageView.layer.cornerRadius = 6
     imageView.backgroundColor = .white
+    imageView.clipsToBounds = true
     return imageView
   }()
   

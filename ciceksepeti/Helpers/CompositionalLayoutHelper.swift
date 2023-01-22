@@ -45,7 +45,7 @@ struct CompositionalLayoutHelper {
     let section = NSCollectionLayoutSection(group: group)
   
     section.contentInsets = .init(top: 8, leading: 8, bottom: 8, trailing: 8)
-    section.orthogonalScrollingBehavior = .paging
+    section.orthogonalScrollingBehavior = .groupPaging
     return section
   }
   

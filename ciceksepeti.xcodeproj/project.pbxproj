@@ -18,6 +18,7 @@
 		2D0F72EB297DE7E0009D6AE6 /* CategoryCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F72EA297DE7E0009D6AE6 /* CategoryCellModel.swift */; };
 		2D0F72ED297DE7F9009D6AE6 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F72EC297DE7F9009D6AE6 /* CategoryCell.swift */; };
 		2D0F72EF297DE8A5009D6AE6 /* CategoryCellMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F72EE297DE8A5009D6AE6 /* CategoryCellMockData.swift */; };
+		2D0F72F1297DED0F009D6AE6 /* BoxBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F72F0297DED0F009D6AE6 /* BoxBinding.swift */; };
 		2D2BEBAF297B60250083C573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBAE297B60250083C573 /* AppDelegate.swift */; };
 		2D2BEBB1297B60250083C573 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BEBB0297B60250083C573 /* SceneDelegate.swift */; };
 		2D2BEBB8297B60260083C573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D2BEBB7297B60260083C573 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		2D0F72EA297DE7E0009D6AE6 /* CategoryCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellModel.swift; sourceTree = "<group>"; };
 		2D0F72EC297DE7F9009D6AE6 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		2D0F72EE297DE8A5009D6AE6 /* CategoryCellMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellMockData.swift; sourceTree = "<group>"; };
+		2D0F72F0297DED0F009D6AE6 /* BoxBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxBinding.swift; sourceTree = "<group>"; };
 		2D2BEBAB297B60250083C573 /* ciceksepeti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ciceksepeti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2BEBAE297B60250083C573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D2BEBB0297B60250083C573 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				2D2BEBE0297B83700083C573 /* CompositionalLayoutHelper.swift */,
+				2D0F72F0297DED0F009D6AE6 /* BoxBinding.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				2D0F72E3297DE1CC009D6AE6 /* SlideCell.swift in Sources */,
 				2D0F72EF297DE8A5009D6AE6 /* CategoryCellMockData.swift in Sources */,
 				2D0F72D7297DD841009D6AE6 /* Images.swift in Sources */,
+				2D0F72F1297DED0F009D6AE6 /* BoxBinding.swift in Sources */,
 				2D2BEBD7297B62480083C573 /* ProfileViewController.swift in Sources */,
 				2D2BEBD9297B62590083C573 /* MainTabBarViewController.swift in Sources */,
 				2D2BEBC4297B60950083C573 /* AppContainer.swift in Sources */,

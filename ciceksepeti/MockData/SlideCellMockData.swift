@@ -9,7 +9,7 @@ import Foundation
 
 struct SlideCellMock {
   static let data = [
-    SlideCellModel(image: "top-section-0"),
-    SlideCellModel(image: "top-section-1"),
+    SlideCellModel(image: "mock-image-2"),
+    SlideCellModel(image: "mock-image-2"),
   ]
 }
