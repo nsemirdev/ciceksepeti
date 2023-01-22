@@ -12,6 +12,7 @@ final class HomeFeedViewModel {
   private var descending = false
   var indexForSlide = Box<Int>(0)
   var timer: Timer?
+  var isAnimating: Bool = true
   
   func getSection(_ sectionIndex: Int) -> NSCollectionLayoutSection? {
     switch sectionIndex {
@@ -27,6 +28,7 @@ final class HomeFeedViewModel {
   }
   
   func startAnimating() {
+    isAnimating = true
     timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [unowned self] _ in
       if !descending && indexForSlide.value < maximumIndexForSliding {
         indexForSlide.value += 1
@@ -47,6 +49,19 @@ final class HomeFeedViewModel {
   }
   
   func endAnimating() {
+    isAnimating = false
     timer?.invalidate()
+  }
+  
+  func scrolled(contentOffset: CGFloat, minYframe: CGFloat) {
+    if contentOffset > minYframe {
+      if isAnimating {
+        endAnimating()
+      }
+    } else {
+      if !isAnimating {
+        startAnimating()
+      }
+    }
   }
 }

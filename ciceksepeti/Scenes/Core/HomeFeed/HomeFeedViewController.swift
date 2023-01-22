@@ -92,15 +92,27 @@ final class HomeFeedViewController: UIViewController {
       make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
     }
   }
-  
+
   deinit {
     viewModel.endAnimating()
   }
 }
 
 extension HomeFeedViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    if scrollView.contentSize != .zero {
+      guard let item = collectionView.cellForItem(at: IndexPath(item: 0, section: 1)) else { return }
+      viewModel.scrolled(
+        contentOffset: scrollView.contentOffset.y,
+        minYframe: item.frame.minY
+      )
+    }
+  }
+
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    print("Section \(indexPath.section) Item \(indexPath.item)")
+    let vc = CategoriesDetailViewController()
+    vc.viewModel = CategoriesDetailViewModel(indexPath: indexPath)
+    navigationController?.pushViewController(vc, animated: true)
   }
 
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -145,7 +157,7 @@ extension HomeFeedViewController: UICollectionViewDataSource, UICollectionViewDe
       item.configure(with: CategoryCellMock.data[indexPath.row])
       return item
     }
-
+    // TODO:
     return .init()
   }
 }
